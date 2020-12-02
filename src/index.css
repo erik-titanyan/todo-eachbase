@@ -5,9 +5,237 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f3e5f5;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between
+}
+
+h1 {
+  color: grey;
+}
+
+.submit-button, .color-button, .delete-button, .add-button, .delete-all-btn{
+  border: 0px;
+  cursor: pointer;
+  background-color: inherit;
+  color: green;
+}
+
+.card-icon {
+  font-size: 1.5vw;
+}
+
+.delete-button {
+  overflow: hidden;
+  color: #656464;
+}
+
+.delete-icon-abs{
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  color: #999797;
+}
+
+.header-container {
+  display: block;
+  text-align: center;
+  overflow: hidden;
+  margin: auto;
+  width: 90%;
+}
+
+.header-button-container{
+  display: flex;
+  justify-content: space-between;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.card-container{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: auto;
+}
+
+.sticky-note{
+  width: 20%;
+  position: relative;
+  background: #ffa;
+  padding: 1.2vw 1.2vw 0.4vw 1.2vw;
+  margin-top: 15px;
+  box-shadow: -2px 0px -6px 8px rgba(0,0,0, 0.5);
+  box-shadow: 5px 5px 5px -5px #333;
+  color: #0e3284;
+}
+
+.header-icons {
+  font-size: 2vw;
+}
+
+.delete-all-btn i {
+  color: #d83f3f;
+}
+
+textarea:focus, input:focus, button:focus{
+  outline: none;
+  outline-offset: 0;
+
+}
+
+::-webkit-scrollbar {
+  width: 0px !important;
+}
+
+.title, .description {
+  border: 0px;
+  background: #ffa;
+  padding: 5px 0px;
+  color: #0e3284;
+  width: 100%;
+  background-color: inherit;
+}
+.title{
+  line-height: 1.5vw;
+  font-size: 1.7vw;
+}
+
+.loader, .info-message{
+  text-align: center;
+  width: 100%
+}
+
+.loader p, .info-message p {
+  font-weight: bold;
+  font-size: 1.5vw;
+  color: #403b3b;
+  margin-top: 20vh;
+}
+
+.description {
+  font-size: 1vw;
+  line-height: 1.5vw;
+  resize: none;
+  overflow: auto;
+  height: 21vh;
+  overflow-x: hidden;
+}
+.parent {
+  width: calc(100% + 17px);
+  overflow:hidden;
+  position: relative;
+}
+
+.parent:after {
+  position: absolute;
+  width: 17px;
+  top: 0;
+  right: 0px;
+  height: 21vw;
+  border-left:1px solid #ffa;
+  background-color: #ffa;
+  content: "";
+  display: block;
+}
+
+.input-field {
+  visibility: hidden;
+  position: absolute;
+}
+#toast{
+  position:fixed;
+  top:0;
+  left:75%;
+  transform:translate(-50%);
+  background-color:#000;
+  color:#fff;
+  padding:16px;
+  border-radius:4px;
+  text-align:center;
+  z-index:1;
+  box-shadow:0 0 20px rgba(0,0,0,0.3);
+  visibility:hidden;
+  opacity:0;
+}
+
+.green-backgrund{
+  background-color: green;
+}
+
+.red-backgrund{
+  background-color: red;
+}
+
+#toast.show{
+  visibility:visible;
+  animation:fadeInOut 3s;
+}
+
+@keyframes fadeInOut{
+  5%,95%{opacity:1;top:50px}
+  15%,85%{opacity:1;top:30px}
+}
+
+@media only screen and (max-width: 1024px) {
+  .description{
+    height: 16vh;
+    font-size: 2vw;
+    line-height: 2.5vw;
+  }
+  .sticky-note{
+    width: 40%;
+  }
+  .title{
+    font-size: 2.5vw;
+  }
+
+  .submit-button i {
+    font-size: 3vw;
+  }
+
+  .header-icons{
+    font-size: 4vw;
+  }
+
+  .card-icon{
+    font-size: 2vw;
+  }
+
+  .loader p, .info-message p {
+    font-size: 2vw;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .description{
+    height: 11vh;
+    font-size: 3vw;
+    line-height: 3vw;
+  }
+  .title{
+    font-size: 3.5vw;
+  }
+  .sticky-note{
+    width: 45%;
+  }
+  .header-icons{
+    font-size: 5vw;
+  }
+  .card-icon{
+    font-size: 3vw;
+  }
+  .loader p, .info-message p{
+    font-size: 3vw;
+  }
+  .delete-icon-abs{
+    top: -10px;
+    right: -5px;
+  }
 }
