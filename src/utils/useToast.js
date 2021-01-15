@@ -4,7 +4,8 @@ export const setToast = (html, success = false) => {
   success ? instance.style.backgroundColor = '#089008' : instance.style.backgroundColor = '#d83f3f' 
   instance.innerHTML = html
   setTimeout(function(){
-    instance.classList.remove("show");
+    instance.classList.remove("show")
+    instance.innerHTML = null
   },3000);
-  
+    
 }

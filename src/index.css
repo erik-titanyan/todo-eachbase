@@ -1,27 +1,42 @@
 body {
   margin: 0;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #f3e5f5;
+ 
 }
 
-.buttons-container {
-  display: flex;
-  justify-content: space-between
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
 
 h1 {
   color: grey;
 }
 
-.submit-button, .color-button, .delete-button, .add-button, .delete-all-btn{
+/* Todo page */
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between
+}
+
+.submit-button, .color-button, .delete-button, .add-button, .delete-all-btn, .log-out-btn{
   border: 0px;
   cursor: pointer;
   background-color: inherit;
   color: green;
+}
+
+.log-out-btn {
+  color: #656464
 }
 
 .card-icon {
@@ -53,10 +68,6 @@ h1 {
   justify-content: space-between;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 .card-container{
   display: flex;
   justify-content: space-around;
@@ -183,6 +194,48 @@ textarea:focus, input:focus, button:focus{
   15%,85%{opacity:1;top:30px}
 }
 
+/* Login page */
+
+.register-box {
+  background-color: #ffffffd3;
+  position: absolute;
+  padding: 1.5rem;
+  padding-bottom: 4.5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 26%;
+  border-radius: 1.5em;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+  text-align: center;
+}
+
+
+.box-header h1 {
+  font-weight: 300;
+}
+
+
+.register-box form input {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #0e3284;
+  padding: .5rem 1rem;
+  width: 76%;
+  outline: none;
+  border-radius: 24px;
+}
+
+.register-box form input[type = 'submit'] {
+  width: 30%;
+  padding: 5px;
+  cursor: pointer;
+}
+
+
 @media only screen and (max-width: 1024px) {
   .description{
     height: 16vh;
@@ -211,9 +264,20 @@ textarea:focus, input:focus, button:focus{
   .loader p, .info-message p {
     font-size: 2vw;
   }
+
+  .box-header h1 {
+    font-size: 1.5em;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .register-box {
+    padding: 2rem 3.5rem;
+  }
 }
 
 @media only screen and (max-width: 600px) {
+  
   .description{
     height: 11vh;
     font-size: 3vw;
@@ -238,4 +302,21 @@ textarea:focus, input:focus, button:focus{
     top: -10px;
     right: -5px;
   }
+  .register-box form input {
+    padding: .4rem .6rem;
+    font-size: .7rem;
+  }
+
+  .register-box form input[type='submit'] {
+    width: 40%;
+  }
+
+  .register-box h1 {
+    font-size: 1.2rem;
+  } 
+
+  .register-box p {
+    font-size:.7rem;
+  }
 }
+

@@ -9,19 +9,29 @@ export const useHttp = () => {
         body = JSON.stringify(body)
         headers['Content-type'] = 'application/json'
       }
+
+      const userData = JSON.parse(localStorage.getItem('userData')) || null 
+
+      if(userData) {
+        headers['Authorization'] = `Bearer ${userData.token}`
+      }
   
       const res = await fetch(url, {method, body, headers})
       
       const data = await res.json()
 
       if(!res.ok) {
-       throw new Error(data.message || 'something went wrong') 
+        throw new Error(data.message || 'something went wrong') 
       }
 
       return data
 
     } catch (e) {
-      setToast(e.message || 'Something went wrong')
+      debugger
+      // if(e.message === "Unauthorized user") {
+      //   localStorage.removeItem('userData')
+      // }
+      setToast(e.message || 'Something went wrong') 
       throw e
     }
     
