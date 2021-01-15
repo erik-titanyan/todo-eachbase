@@ -27,10 +27,6 @@ export const useHttp = () => {
       return data
 
     } catch (e) {
-      debugger
-      // if(e.message === "Unauthorized user") {
-      //   localStorage.removeItem('userData')
-      // }
       setToast(e.message || 'Something went wrong') 
       throw e
     }
